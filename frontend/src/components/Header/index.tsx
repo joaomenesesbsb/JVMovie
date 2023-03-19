@@ -7,7 +7,7 @@ export default function Header() {
             <nav className="container">
                 <div className="dsmovie-nav-content">
                     <h1>DSMovie</h1>
-                    <a href="https://github.com/devsuperior" target="_blank" rel="noreferrer">
+                    <a href="https://github.com/joaomenesesbsb" target="_blank" rel="noreferrer">
                         <div className="dsmovie-contact-container">
                             <img src={GithubIcon} alt="Github"></img>
                             <p className="dsmovie-contact-link">/joaomenesesbsb</p>
