@@ -5,29 +5,29 @@ header {
     align-items: center;
 }
 
-.dsmovie-nav-content {
+.jvmovie-nav-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #fff;
 }
 
-.dsmovie-nav-content h1 {
+.jvmovie-nav-content h1 {
     font-size: 24px;
     margin: 0;
     font-weight: 700;
 }
 
-.dsmovie-contact-container {
+.jvmovie-contact-container {
     display: flex;
     align-items: center;
 }
 
-.dsmovie-contact-link {
+.jvmovie-contact-link {
     margin: 0 0 0 10px;
     font-size: 12px;
 }
 
-.dsmovie-contact-container img {
+.jvmovie-contact-container img {
     width: 24px;
 }

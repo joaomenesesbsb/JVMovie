@@ -7,10 +7,10 @@ export default function MovieScore() {
     const count = 13;
 
     return (
-        <div className="dsmovie-score-container">
-            <p className="dsmovie-score-value">{score > 0 ? score.toFixed(1) : '-'}</p>
+        <div className="jvmovie-score-container">
+            <p className="jvmovie-score-value">{score > 0 ? score.toFixed(1) : '-'}</p>
             <MovieStars />
-            <p className="dsmovie-score-count">{count} avaliações</p>
+            <p className="jvmovie-score-count">{count} avaliações</p>
         </div>
     )
 }

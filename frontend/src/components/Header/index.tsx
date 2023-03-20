@@ -6,14 +6,14 @@ export default function Header() {
     return (
         < header >
             <nav className="container">
-                <div className="dsmovie-nav-content">
+                <div className="jvmovie-nav-content">
                     <NavLink to={"/"}>
                         <h1>DSMovie</h1>
                     </NavLink>
                     <a href="https://github.com/joaomenesesbsb" target="_blank" rel="noreferrer">
-                        <div className="dsmovie-contact-container">
+                        <div className="jvmovie-contact-container">
                             <img src={GithubIcon} alt="Github"></img>
-                            <p className="dsmovie-contact-link">/joaomenesesbsb</p>
+                            <p className="jvmovie-contact-link">/joaomenesesbsb</p>
                         </div>
                     </a>
                 </div>

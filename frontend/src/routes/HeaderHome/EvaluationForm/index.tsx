@@ -12,16 +12,16 @@ export default function EvaluationForm() {
     };
 
     return (
-        <div className="dsmovie-form-container">
-            <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
-            <div className="dsmovie-card-bottom-container">
+        <div className="jvmovie-form-container">
+            <img className="jvmovie-movie-card-image" src={movie.image} alt={movie.title} />
+            <div className="jvmovie-card-bottom-container">
                 <h3>{movie.title}</h3>
-                <form className="dsmovie-form">
-                    <div className="form-group dsmovie-form-group">
+                <form className="jvmovie-form">
+                    <div className="form-group jvmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
                         <input type="email" className="form-control form-box" id="email" />
                     </div>
-                    <div className="form-group dsmovie-form-group">
+                    <div className="form-group jvmovie-form-group">
                         <label htmlFor="score">Informe sua avaliação</label>
                         <select className="form-control form-box" id="score">
                             <option>1</option>
@@ -31,12 +31,12 @@ export default function EvaluationForm() {
                             <option>5</option>
                         </select>
                     </div>
-                    <div className="dsmovie-form-btn-container">
-                        <button type="submit" className="btn btn-primary dsmovie-btn mb-20">Salvar</button>
+                    <div className="jvmovie-form-btn-container">
+                        <button type="submit" className="btn btn-primary jvmovie-btn mb-20">Salvar</button>
                     </div>
                 </form >
                 <Link to={'/'}>
-                    <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+                    <button className="btn btn-primary jvmovie-btn mt-3">Cancelar</button>
                 </Link>
             </div >
         </div >

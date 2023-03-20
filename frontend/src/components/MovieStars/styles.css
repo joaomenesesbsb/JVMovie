@@ -1,10 +1,10 @@
-.dsmovie-stars-container {
+.jvmovie-stars-container {
     width: 130px;
     display: flex;
     justify-content: space-between;
 }
 
-.dsmovie-stars-container img {
+.jvmovie-stars-container img {
     width: 22px;
     height: auto;
 }

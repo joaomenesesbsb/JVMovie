@@ -5,7 +5,7 @@ import StarEmpty from '../../assets/star-empty.svg';
 
 export default function MovieStars() {
     return (
-        <div className="dsmovie-stars-container">
+        <div className="jvmovie-stars-container">
             <img src={StarFull} alt="star-full" />
             <img src={StarFull} alt="star-full" />
             <img src={StarFull} alt="star-full" />
