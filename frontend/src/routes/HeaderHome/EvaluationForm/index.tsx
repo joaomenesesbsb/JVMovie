@@ -11,12 +11,16 @@ export default function EvaluationForm() {
         score: 4.5
     };
 
+    function handleSubmit(e : any){
+        e.preventDefault();
+    }
+
     return (
         <div className="jvmovie-form-container">
             <img className="jvmovie-movie-card-image" src={movie.image} alt={movie.title} />
             <div className="jvmovie-card-bottom-container">
                 <h3>{movie.title}</h3>
-                <form className="jvmovie-form">
+                <form className="jvmovie-form" onClick={handleSubmit}>
                     <div className="form-group jvmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
                         <input type="email" className="form-control form-box" id="email" />
