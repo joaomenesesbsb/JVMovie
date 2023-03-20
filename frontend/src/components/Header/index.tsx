@@ -1,12 +1,15 @@
 import "./styles.css";
-import GithubIcon from "../../assets/github.png";
+import GithubIcon from "../../assets/github.svg";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
         < header >
             <nav className="container">
                 <div className="dsmovie-nav-content">
-                    <h1>DSMovie</h1>
+                    <NavLink to={"/"}>
+                        <h1>DSMovie</h1>
+                    </NavLink>
                     <a href="https://github.com/joaomenesesbsb" target="_blank" rel="noreferrer">
                         <div className="dsmovie-contact-container">
                             <img src={GithubIcon} alt="Github"></img>

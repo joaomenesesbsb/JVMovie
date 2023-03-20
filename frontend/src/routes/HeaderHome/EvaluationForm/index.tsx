@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 export default function EvaluationForm() {
@@ -18,11 +19,11 @@ export default function EvaluationForm() {
                 <form className="dsmovie-form">
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
-                        <input type="email" className="form-control" id="email" />
+                        <input type="email" className="form-control form-box" id="email" />
                     </div>
                     <div className="form-group dsmovie-form-group">
                         <label htmlFor="score">Informe sua avaliação</label>
-                        <select className="form-control" id="score">
+                        <select className="form-control form-box" id="score">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -31,10 +32,12 @@ export default function EvaluationForm() {
                         </select>
                     </div>
                     <div className="dsmovie-form-btn-container">
-                        <button type="submit" className="btn btn-primary dsmovie-btn">Salvar</button>
+                        <button type="submit" className="btn btn-primary dsmovie-btn mb-20">Salvar</button>
                     </div>
                 </form >
-                <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+                <Link to={'/'}>
+                    <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+                </Link>
             </div >
         </div >
     )
