@@ -8,7 +8,7 @@ export default function Header() {
             <nav className="container">
                 <div className="jvmovie-nav-content">
                     <NavLink to={"/"}>
-                        <h1>DSMovie</h1>
+                        <h1>JVMovie</h1>
                     </NavLink>
                     <a href="https://github.com/joaomenesesbsb" target="_blank" rel="noreferrer">
                         <div className="jvmovie-contact-container">
