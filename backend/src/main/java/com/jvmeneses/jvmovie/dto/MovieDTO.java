@@ -2,6 +2,11 @@ package com.jvmeneses.jvmovie.dto;
 
 
 import com.jvmeneses.jvmovie.entities.Movie;
+import com.jvmeneses.jvmovie.entities.Score;
+import jakarta.persistence.OneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class MovieDTO {
@@ -70,5 +75,4 @@ public class MovieDTO {
     public void setImage(String image) {
         this.image = image;
     }
-
 }

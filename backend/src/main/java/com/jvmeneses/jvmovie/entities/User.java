@@ -15,6 +15,9 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    @OneToMany(mappedBy = "id.user")
+    private Set<Score> scores = new HashSet<>();
+
     public User(){}
 
     public User(Long id, String email) {
@@ -38,4 +41,7 @@ public class User {
         this.email = email;
     }
 
+    public Set<Score> getScores() {
+        return scores;
+    }
 }

@@ -1,6 +1,11 @@
 package com.jvmeneses.jvmovie.dto;
 
+import com.jvmeneses.jvmovie.entities.Score;
 import com.jvmeneses.jvmovie.entities.User;
+import jakarta.persistence.OneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class UserDTO {

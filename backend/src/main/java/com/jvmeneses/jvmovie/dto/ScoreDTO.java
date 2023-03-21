@@ -5,23 +5,15 @@ import com.jvmeneses.jvmovie.entities.Score;
 public class ScoreDTO {
 
     private Long movieId;
-    private String nameMovie;
-    private String userEmail;
+    private String email;
     private Double note;
 
     public ScoreDTO() {
     }
 
-    public ScoreDTO(Long movieId, String nameMovie, String userEmail, Double note) {
-        this.movieId = movieId;
-        this.nameMovie = nameMovie;
-        this.userEmail = userEmail;
-        this.note = note;
-    }
     public ScoreDTO(Score entity) {
         movieId = entity.getMovie().getId();
-        nameMovie = entity.getMovie().getTitle();
-        userEmail = entity.getUSer().getEmail();
+        email = entity.getUSer().getEmail();
         note = entity.getNote();
     }
 
@@ -33,20 +25,12 @@ public class ScoreDTO {
         this.movieId = movieId;
     }
 
-    public String getNameMovie() {
-        return nameMovie;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNameMovie(String nameMovie) {
-        this.nameMovie = nameMovie;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Double getNote() {
