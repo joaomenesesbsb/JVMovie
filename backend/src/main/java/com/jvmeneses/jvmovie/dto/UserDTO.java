@@ -1,25 +1,24 @@
-package com.jvmeneses.jvmovie.entities;
+package com.jvmeneses.jvmovie.dto;
 
-import jakarta.persistence.*;
+import com.jvmeneses.jvmovie.entities.User;
 
-import java.util.HashSet;
-import java.util.Set;
 
-@Entity
-@Table(name = "tb_user")
-public class User {
+public class UserDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true)
     private String email;
 
-    public User(){}
+    public UserDTO() {
+    }
 
-    public User(Long id, String email) {
+    public UserDTO(Long id, String email) {
         this.id = id;
         this.email = email;
+    }
+
+    public UserDTO(User entity) {
+        id = entity.getId();
+        email = entity.getEmail();
     }
 
     public Long getId() {
@@ -37,5 +36,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

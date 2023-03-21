@@ -1,30 +1,34 @@
-package com.jvmeneses.jvmovie.entities;
+package com.jvmeneses.jvmovie.dto;
 
-import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.jvmeneses.jvmovie.entities.Movie;
 
-@Entity
-@Table(name = "tb_movie")
-public class Movie {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MovieDTO {
+
     private Long id;
     private String title;
     private Double score;
     private Integer count;
     private String image;
 
-    public Movie(){}
+    public MovieDTO() {
+    }
 
-    public Movie(Long id, String title, Double score, Integer count, String image) {
+    public MovieDTO(Long id, String title, Double score, Integer count, String image) {
         this.id = id;
         this.title = title;
         this.score = score;
         this.count = count;
         this.image = image;
+    }
+
+    public MovieDTO(Movie entity) {
+        id = entity.getId();
+        title = entity.getTitle();
+        score = entity.getScore();
+        count =entity.getCount();
+        image = entity.getImage();
     }
 
     public Long getId() {
