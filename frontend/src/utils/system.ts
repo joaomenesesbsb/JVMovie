@@ -1,0 +1,1 @@
+export const MOVIE_KEY = 'com.jvmeneses/jvmovie/Movie';

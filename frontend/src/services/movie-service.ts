@@ -1,14 +1,22 @@
 import { Movie } from "../models/movie";
-import * as movieRepository from "../repositories/movie-repository";
-
-export function findAll() :Movie[]{
-    return movieRepository.findAll();
-}
+import * as movieRepository from "../localStorage/movie-repository";
 
 export function findById(id :number): Movie| undefined{
     return movieRepository.findById(id);
 }
 
-export function filterList(searchTerm: string): Movie[] {
-    return movieRepository.filterList(searchTerm);
+export function saveMovies(){
+    return movieRepository.save();
+}
+
+export function getMovies(){
+    return movieRepository.get();
+}
+
+export function exist(key :string): boolean{
+    return movieRepository.exist(key);
+}
+
+export function filterMovies(searchTerm: string): Movie[] {
+    return movieRepository.filterMovies(searchTerm);
 }

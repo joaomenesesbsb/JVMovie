@@ -1,22 +1,40 @@
 import { Movie } from "../models/movie";
+import { MOVIE_KEY } from "../utils/system";
 
-export function findAll(): Movie[] {
-    return movies;
+export function save() {
+    const str = JSON.stringify(movies);
+    localStorage.setItem(MOVIE_KEY, str);
+}
+
+export function get(): Movie[] {
+    const str = localStorage.getItem(MOVIE_KEY) || '{"movies":[]}';
+    const obj = JSON.parse(str) as Movie[];
+    return obj;
+}
+
+export function exist(key: string): boolean {
+    if (localStorage.getItem(MOVIE_KEY) !== null) {
+        return true;
+    }
+    else return false;
+}
+
+export function filterMovies(searchTerm: string): Movie[] {
+    const listMovies = get();
+    return listMovies.filter(item => {
+        const itemName = item.title.toLowerCase();
+        const searchTermLower = searchTerm.toLowerCase();
+        return itemName.indexOf(searchTermLower) !== -1;
+    });
 }
 
 export function findById(id: number): Movie | undefined {
-    return movies.find(x => x.id === id);
+    const listMovies = get();
+    return listMovies.find(x => x.id === id);
 }
 
-export function filterList(searchTerm: string): Movie[] {
-    return movies.filter(item => {
-      const itemName = item.title.toLowerCase();
-      const searchTermLower = searchTerm.toLowerCase();
-      return itemName.indexOf(searchTermLower) !== -1;
-    });
-  }
 
-let movies: Movie[] =  [
+let movies: Movie[] = [
     {
         "id": 1,
         "title": "The Witcher",
