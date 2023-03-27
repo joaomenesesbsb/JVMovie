@@ -1,11 +1,12 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
 import Moviecard from "../../../components/MovieCard";
-import Pagination from "../../../components/Pagination";
 import SearchBar from "../../../components/searchBar";
 import { Movie } from "../../../models/movie";
 import * as movieService from "../../../services/movie-service";
+import * as lsService from "../../../services/ls-service";
 import { MOVIE_KEY } from "../../../utils/system";
+import Pagination from "../../../components/Pagination";
 
 type QueryParams ={
     name: string
@@ -20,13 +21,11 @@ export default function Listing() {
     });
 
     useEffect(() => {
-        if(movieService.exist(MOVIE_KEY)){
-        }
-        else{
+        if(lsService.exist(MOVIE_KEY)){
             movieService.saveMovies();
         }
             setMovies(movieService.filterMovies(queryParams.name));
-    },[queryParams]);
+    },[]);
 
     function handleSearch(text: string){
         setMovies([]);
