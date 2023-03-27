@@ -14,7 +14,7 @@ export default function Moviecard({movie}: Props) {
             <img className="jvmovie-movie-card-image" src={movie.image} alt={movie.title} />
             <div className="jvmovie-card-bottom-container">
                 <h3 className="truncate">{movie.title}</h3>
-                <MovieScore />
+                <MovieScore score={movie.score} count={movie.count}/>
                 <Link to={`/form/${movie.id}`}>
                     <div className="btn btn-primary jvmovie-btn">Avaliar</div>
                 </Link>

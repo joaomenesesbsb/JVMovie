@@ -1,15 +1,16 @@
 import './styles.css';
 import MovieStars from '../MovieStars';
 
-export default function MovieScore() {
+type Props = {
+    score : number;
+    count : number;
+}
 
-    const score = 3.5;
-    const count = 13;
-
+export default function MovieScore({score, count}: Props) {
     return (
         <div className="jvmovie-score-container">
             <p className="jvmovie-score-value">{score > 0 ? score.toFixed(1) : '-'}</p>
-            <MovieStars />
+            <MovieStars score={score}/>
             <p className="jvmovie-score-count">{count} avaliações</p>
         </div>
     )
