@@ -17,24 +17,25 @@ export function newScore(movie: Movie, newScore: Score) {
     const str = localStorage.getItem(MOVIE_KEY) || '{"movies":[]}';
     const list = JSON.parse(str);
     const idMovie = movie.id;
-    console.log("pegou as variaveis")
-    console.log(list)
+
     // Encontra o objeto específico na lista e atualiza seus valores
     const movieToUpdate = list.find((movie: Movie) => movie.id === idMovie);
   if (movieToUpdate) {
     movieToUpdate.scores.push({ email: newScore.email, score: newScore.score });
-    console.log(movieToUpdate)
+    const updateCount = movieToUpdate.scores.length;
+    let sum = 0;
+    movieToUpdate.scores.forEach((item: Score) => sum = sum + item.score);
+    const updateScore = sum / updateCount;
+    movieToUpdate.count = updateCount;
+    movieToUpdate.score = updateScore;
   } else {
     console.log("Objeto não encontrado!");
   }
-    console.log("encontrou  o obj")
+
     // Converte a lista atualizada de volta para uma string JSON
     const updatedList = JSON.stringify(list);
-    console.log("converteu")
-    console.log(updatedList)
     // Armazena a lista atualizada de volta no localStorage
     localStorage.setItem(MOVIE_KEY, updatedList);
-    console.log("armazenou")
 }
 
 

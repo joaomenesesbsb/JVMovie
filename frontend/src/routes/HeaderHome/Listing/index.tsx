@@ -8,7 +8,7 @@ import * as lsService from "../../../services/ls-service";
 import { MOVIE_KEY } from "../../../utils/system";
 import Pagination from "../../../components/Pagination";
 
-type QueryParams ={
+type QueryParams = {
     name: string
 }
 
@@ -17,27 +17,28 @@ export default function Listing() {
     const [movies, setMovies] = useState<Movie[]>([]);
 
     const [queryParams, setQueryParams] = useState<QueryParams>({
-        name : ''
+        name: ''
     });
 
     useEffect(() => {
-        if(lsService.exist(MOVIE_KEY)){
+        if (lsService.exist(MOVIE_KEY)) {
             movieService.saveMovies();
         }
-            setMovies(movieService.filterMovies(queryParams.name));
-    },[]);
+        setMovies(movieService.getMovies());
+        setMovies(movieService.filterMovies(queryParams.name));
+    }, [queryParams]);
 
-    function handleSearch(text: string){
+    function handleSearch(text: string) {
         setMovies([]);
-        setQueryParams({...queryParams, name: text});
+        setQueryParams({ ...queryParams, name: text });
     }
 
     return (
         <main className="container mb-20 mt-20">
-            <SearchBar onSearch={handleSearch}/>
+            <SearchBar onSearch={handleSearch} />
             <div className="jv-movie-cards">
                 {
-                   movies.map(movie => <Moviecard key={movie.id} movie={movie} />)
+                    movies.map(movie => <Moviecard key={movie.id} movie={movie} />)
                 }
             </div>
         </ main>

@@ -20,18 +20,23 @@ export default function MovieForm({ movie }: Props) {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log(movie, newScore);
-        const updatedMovie: Movie = { ...movie };
-
-        const email = (e.target as HTMLFormElement).email.value;
-        const score = (e.target as HTMLFormElement).score.value;
-        if (email !== '' && score !== 0 ) {
-            updatedMovie.scores.push({ "email": email, "score": parseInt(score) });
-            setNewScore({...newScore, email: email, score: score})
+        if (newScore.email !== '' && newScore.score !== 0 ) {
             movieService.newScore(movie,newScore);
+            console.log("SUCcESS!!")
         } else {
             console.log("Informe um email e uma avaliação válidos"); 
         }
+    }
+
+    function handleSelectChange(e: React.ChangeEvent<HTMLSelectElement>){
+        console.log(newScore);
+        const score = (e.target as HTMLSelectElement).value;
+        setNewScore({...newScore, score: Number(score)})
+    }
+    function handleImputChange(e: React.ChangeEvent<HTMLInputElement>){
+        console.log(newScore);
+        const email = e.target.value;
+        setNewScore({...newScore, email: email})
     }
 
 
@@ -43,11 +48,11 @@ export default function MovieForm({ movie }: Props) {
                 <form className="jvmovie-form" onSubmit={handleSubmit}>
                     <div className="form-group jvmovie-form-group">
                         <label htmlFor="email">Informe seu email</label>
-                        <input type="email" className="form-control form-box" id="email" />
+                        <input type="email" className="form-control form-box" id="email" onChange={handleImputChange}/>
                     </div>
                     <div className="form-group jvmovie-form-group">
                         <label htmlFor="score">Informe sua avaliação</label>
-                        <select className="form-control form-box" id="score">
+                        <select className="form-control form-box" id="score" onChange={handleSelectChange}>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>

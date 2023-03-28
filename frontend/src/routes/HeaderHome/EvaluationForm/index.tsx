@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MovieForm from "../../../components/movieForm";
+import MovieForm from "../../../components/MovieForm";
 import { Movie } from "../../../models/movie";
 import * as movieService from "../../../services/movie-service"
 import * as userService from "../../../services/user-service";
