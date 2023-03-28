@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, ScrollRestoration } from 'react-router-dom';
+import { Link, ScrollRestoration, useNavigate } from 'react-router-dom';
 import { Movie } from '../../models/movie';
 import { Score } from '../../models/score';
 import * as movieService from "../../services/movie-service";
@@ -10,6 +10,8 @@ type Props = {
 }
 
 export default function MovieForm({ movie }: Props) {
+
+    const navigate = useNavigate();
 
     const [newScore, setNewScore] = useState<Score>({
         email: '',
@@ -22,19 +24,18 @@ export default function MovieForm({ movie }: Props) {
         e.preventDefault();
         if (newScore.email !== '' && newScore.score !== 0 ) {
             movieService.newScore(movie,newScore);
-            console.log("SUCcESS!!")
+            navigate("/")
+            console.log("SUCCESS!!")
         } else {
             console.log("Informe um email e uma avaliação válidos"); 
         }
     }
 
     function handleSelectChange(e: React.ChangeEvent<HTMLSelectElement>){
-        console.log(newScore);
         const score = (e.target as HTMLSelectElement).value;
         setNewScore({...newScore, score: Number(score)})
     }
     function handleImputChange(e: React.ChangeEvent<HTMLInputElement>){
-        console.log(newScore);
         const email = e.target.value;
         setNewScore({...newScore, email: email})
     }
