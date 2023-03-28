@@ -24,8 +24,8 @@ export default function MovieForm({ movie }: Props) {
         e.preventDefault();
         if (newScore.email !== '' && newScore.score !== 0 ) {
             movieService.newScore(movie,newScore);
-            navigate("/")
-            console.log("SUCCESS!!")
+            navigate('/listing');
+            console.log("SUCCESS!!");
         } else {
             console.log("Informe um email e uma avaliação válidos"); 
         }
