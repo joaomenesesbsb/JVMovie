@@ -15,7 +15,7 @@ export default function MovieForm({ movie }: Props) {
 
     const [newScore, setNewScore] = useState<Score>({
         email: '',
-        score: 0
+        score: 1
     });
 
 
